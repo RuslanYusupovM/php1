@@ -18,6 +18,10 @@
 
                 return 'Женский пол';
 
+            } elseif ('Никита' === ucfirst($name)) {
+
+                return 'Мужской пол';
+
             } else {
 
                 $character = substr($name, -2, 2);
@@ -25,6 +29,7 @@
                 switch ( strtolower($character) ) {
 
                     case 'а':
+                    case 'я':
                         return 'Женский пол';
                         break;
 
@@ -42,6 +47,12 @@
 
         }
     }
+
+    assert( 'Женский пол' === gender('Любовь') );
+    assert( 'Женский пол' === gender('Вероника') );
+    assert( 'Мужской пол' === gender('Андрей') );
+    assert( 'Мужской пол' === gender('Никита') );
+    assert( 'Неверное значение' === gender('123') );
 
     ?>
 
