@@ -1,8 +1,15 @@
 <?php
 
+require __DIR__ . '/uploader.php';
 require __DIR__ . '/func.php';
 
-$imageAdd = require __DIR__ . '/upload.php';
+$imageToUpload = new Uploader('img');
+
+if  ( $imageToUpload->isUploaded() ) {
+
+    $status = $imageToUpload->upload();
+
+}
 
 $images = getFilesFromFolder(__DIR__ . '/images');
 
@@ -30,7 +37,7 @@ if ( is_array($images) ) {
 
             ?>
             <a href="/gallery2/image.php?id=<?php echo $index; ?>" class="image">
-                <img src="/gallery/images/<?php echo $image; ?>"
+                <img src="/gallery2/images/<?php echo $image; ?>"
                      alt="<?php echo $imageName; ?>"
                      title="<?php echo $imageName; ?>">
             </a><?php
@@ -44,7 +51,7 @@ if ( is_array($images) ) {
         <button type="submit">Добавить изображение</button>
     </form>
     <?php
-    if  ($imageAdd !== null) {?><div><?php echo $imageAdd; ?></div><?php }?>
+    if  (isset($status)) {?><div><?php echo $status; ?></div><?php }?>
 
 </div>
 
