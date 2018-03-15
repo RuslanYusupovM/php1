@@ -1,26 +1,29 @@
 <?php
 
-require __DIR__ . '/Article.php';
-
 class News
-    extends Db
 {
 
-    protected $data;
+    protected $dirPath = __DIR__ . '/../articles/';
+    protected $files;
+    protected $articles;
+
+    public function __construct()
+    {
+
+        $this->files = array_diff( scandir($this->dirPath), ['.', '..'] );
+
+    }
 
     public function getAll() : array
     {
 
-
         foreach ($this->files as $id => $file) {
 
-            $article = new Article;
-
-            $this->data[] = $article->getById($id);
+            $this->articles[] = new Article($id);
 
         }
 
-        return $this->data;
+        return $this->articles;
 
     }
 

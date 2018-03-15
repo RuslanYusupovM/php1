@@ -1,15 +1,17 @@
 <?php
 
-require __DIR__ . '/classes/Db.php';
 require __DIR__ . '/classes/Article.php';
 require __DIR__ . '/classes/View.php';
 
-$article = new Article;
 $view = new View;
 
 if ( !empty($_GET['id']) ) {
 
-    $view->assign( 'article', $article->getById($_GET['id']) );
+    $id = trim($_GET['id']);
+
+    $article = new Article($id);
+
+    $view->assign('article', $article);
     $view->display(__DIR__ . '/templates/article.php');
 
 } else {
