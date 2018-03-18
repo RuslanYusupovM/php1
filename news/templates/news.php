@@ -13,7 +13,7 @@
 <h1>Новости</h1>
 <?php
 
-foreach ($data['articles'] as $article) {?>
+foreach ($articles as $article) {?>
     <a href="/news/article.php?id=<?php echo $article->id; ?>" class="news">
         <h2><?php echo $article->name; ?></h2>
         <?php echo $article->previewText; ?>

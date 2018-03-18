@@ -12,9 +12,7 @@
 
 <h1>Гостевая книга</h1>
 <?php
-if ( !empty($data['guestbook']) ) {
-
-    $records = $data['guestbook'];
+if ( !empty($records) ) {
 
     foreach ($records as $record) {?>
         <div class="record"><?php echo $record; ?></div>

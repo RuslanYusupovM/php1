@@ -12,8 +12,8 @@ if ( !empty($_POST['record']) ) {
 
 }
 
-$data = $gbModel->getData();
+$records = $gbModel->getData();
 
-$gbView->assign('guestbook', $data);
+$gbView->assign('records', $records);
 
 $gbView->display(__DIR__ . '/templates/guestbook.php');

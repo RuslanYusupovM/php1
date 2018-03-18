@@ -10,10 +10,6 @@
 </head>
 <body>
 
-<?php
-$article = $data['article'];
-?>
-
 <h1><?php echo $article->name; ?></h1>
 
 <hr>

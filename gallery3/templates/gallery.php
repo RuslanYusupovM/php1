@@ -14,9 +14,7 @@
 
 <?php
 
-if ( !empty($data['images']) ) {
-
-    $images = $data['images'];
+if ( !empty($images) ) {
 
     foreach ($images as $index => $image) {
 
@@ -38,7 +36,7 @@ if ( !empty($data['images']) ) {
         <button type="submit">Добавить изображение</button>
     </form>
     <?php
-    if  ( isset($data['status']) ) {?><div><?php echo $data['status']; ?></div><?php }?>
+    if  ( isset($status) ) {?><div><?php echo $status; ?></div><?php }?>
 
 </div>
 
