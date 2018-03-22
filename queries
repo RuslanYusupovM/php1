@@ -1,0 +1,14 @@
+CREATE DATABASE dev_db
+  DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
+
+CREATE TABLE news (id SERIAL, title VARCHAR(1000), text TEXT, author VARCHAR(1000));
+
+INSERT INTO news
+(title, text, author)
+VALUES ('Заголовок', 'Текст', 'Автор');
+
+DELETE FROM news
+WHERE id=6;
+
+SELECT * FROM news;

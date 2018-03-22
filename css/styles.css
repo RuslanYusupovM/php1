@@ -1,0 +1,35 @@
+h1 {
+    color: cornflowerblue;
+}
+
+.news .article {
+    border: 1px solid forestgreen;
+    margin: 10px 0;
+    display: block;
+    text-decoration: none;
+}
+
+.article .title {
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    color: blueviolet;
+}
+
+.article .text {
+    text-align: justify;
+    margin: 10px;
+    color: black;
+}
+
+.article .author {
+    text-align: right;
+    margin: 10px;
+    color: darkslategray;
+}
+
+.detail_text {
+    text-align: justify;
+    margin: 10px;
+    color: black;
+}
