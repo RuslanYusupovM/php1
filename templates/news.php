@@ -13,33 +13,27 @@
 <h1>Новости</h1>
 <hr>
 <div class="news">
-    <a href="javascript:void(0);" class="article">
-        <div class="title">Заголовок</div>
-        <div class="text">Текст</div>
-        <div class="author">Автор</div>
-    </a>
-    <a href="javascript:void(0);" class="article">
-        <div class="title">Заголовок</div>
-        <div class="text">Текст</div>
-        <div class="author">Автор</div>
-    </a>
-    <a href="javascript:void(0);" class="article">
-        <div class="title">Заголовок</div>
-        <div class="text">Текст</div>
-        <div class="author">Автор</div>
-    </a>
-    <a href="javascript:void(0);" class="article">
-        <div class="title">Заголовок</div>
-        <div class="text">Текст</div>
-        <div class="author">Автор</div>
-    </a>
-    <a href="javascript:void(0);" class="article">
-        <div class="title">Заголовок</div>
-        <div class="text">Текст</div>
-        <div class="author">Автор</div>
-    </a>
-</div>
+    <?php
+    if (isset($articles)) {
 
+        foreach ($articles as $article) {?>
+
+            <a href="/article.php?id=<?php echo $article['id']; ?>" class="article">
+                <div class="title"><?php echo $article['title']; ?></div>
+                <div class="text">
+                    <?php
+                    echo mb_strimwidth($article['text'], 0, 255, '...');
+                    ?>
+                </div>
+                <div class="author"><?php echo $article['author']; ?></div>
+            </a>
+
+        <?php }
+
+    }
+
+    ?>
+</div>
 
 </body>
 </html>
